@@ -1,0 +1,145 @@
+<patTemplate:tmpl name="main">
+<div class="visiomess_section">
+<h4>Set Simulation Conditions</h4>
+
+<div class="visiomess_figure">
+  <a href="{VSS_IMAGE_DATA}coordinate1.png" target="_blank"><img src="{VSS_IMAGE_DATA}coordinate1s.png" alt="coordinate"/></a>
+</div>
+
+<div class="visiomess_form">
+<form method="post" action="?s={VSS_COMMON_SUBDIR}&amp;p={VSS_COMMON_PAGE}">
+<input type="hidden" name="a" value="save"/>
+<input type="submit" name="submit" value="Set Conditions"/>
+
+<!-- stepPh -->
+<p>
+Vertical allocation step of ommatidium (degree): 
+<select name="stepPh">
+<patTemplate:tmpl name="stepPh" type="condition" conditionvar="IS_SELECTED">
+  <patTemplate:sub condition="1">
+  <option value="{VALUE}" selected="selected">{VALUE}</option>
+  </patTemplate:sub>
+  <patTemplate:sub condition="default">
+  <option value="{VALUE}">{VALUE}</option>
+  </patTemplate:sub>
+</patTemplate:tmpl>
+</select>
+</p>
+
+<!-- stepTh -->
+<p>
+Horizontal allocation step of ommatidium (degree): 
+<select name="stepTh">
+<patTemplate:tmpl name="stepTh" type="condition" conditionvar="IS_SELECTED">
+  <patTemplate:sub condition="1">
+  <option value="{VALUE}" selected="selected">{VALUE}</option>
+  </patTemplate:sub>
+  <patTemplate:sub condition="default">
+  <option value="{VALUE}">{VALUE}</option>
+  </patTemplate:sub>
+</patTemplate:tmpl>
+</select>
+</p>
+
+<!-- figCenter -->
+<p>
+Coordinates of the center of figure (mm) 
+&nbsp;&nbsp;X:
+<select name="figCenterX">
+<patTemplate:tmpl name="figCenterX" type="condition" conditionvar="IS_SELECTED">
+  <patTemplate:sub condition="1">
+  <option value="{VALUE}" selected="selected">{VALUE}</option>
+  </patTemplate:sub>
+  <patTemplate:sub condition="default">
+  <option value="{VALUE}">{VALUE}</option>
+  </patTemplate:sub>
+</patTemplate:tmpl>
+</select>
+&nbsp;&nbsp;Y:
+<select name="figCenterY">
+<patTemplate:tmpl name="figCenterY" type="condition" conditionvar="IS_SELECTED">
+  <patTemplate:sub condition="1">
+  <option value="{VALUE}" selected="selected">{VALUE}</option>
+  </patTemplate:sub>
+  <patTemplate:sub condition="default">
+  <option value="{VALUE}">{VALUE}</option>
+  </patTemplate:sub>
+</patTemplate:tmpl>
+</select>
+&nbsp;&nbsp;Z:
+<select name="figCenterZ">
+<patTemplate:tmpl name="figCenterZ" type="condition" conditionvar="IS_SELECTED">
+  <patTemplate:sub condition="1">
+  <option value="{VALUE}" selected="selected">{VALUE}</option>
+  </patTemplate:sub>
+  <patTemplate:sub condition="default">
+  <option value="{VALUE}">{VALUE}</option>
+  </patTemplate:sub>
+</patTemplate:tmpl>
+</select>
+</p>
+
+<!-- figAngle -->
+<p>
+Figure angle (degree) 
+&nbsp;&nbsp;Horizontal:
+<select name="figAngleH">
+<patTemplate:tmpl name="figAngleH" type="condition" conditionvar="IS_SELECTED">
+  <patTemplate:sub condition="1">
+  <option value="{VALUE}" selected="selected">{VALUE}</option>
+  </patTemplate:sub>
+  <patTemplate:sub condition="default">
+  <option value="{VALUE}">{VALUE}</option>
+  </patTemplate:sub>
+</patTemplate:tmpl>
+</select>
+&nbsp;&nbsp;Vertical:
+<select name="figAngleV">
+<patTemplate:tmpl name="figAngleV" type="condition" conditionvar="IS_SELECTED">
+  <patTemplate:sub condition="1">
+  <option value="{VALUE}" selected="selected">{VALUE}</option>
+  </patTemplate:sub>
+  <patTemplate:sub condition="default">
+  <option value="{VALUE}">{VALUE}</option>
+  </patTemplate:sub>
+</patTemplate:tmpl>
+</select>
+</p>
+
+<!-- figDotD -->
+<p>
+Figure pixel diameter (mm): 
+<select name="figDotD">
+<patTemplate:tmpl name="figDotD" type="condition" conditionvar="IS_SELECTED">
+  <patTemplate:sub condition="1">
+  <option value="{VALUE}" selected="selected">{VALUE}</option>
+  </patTemplate:sub>
+  <patTemplate:sub condition="default">
+  <option value="{VALUE}">{VALUE}</option>
+  </patTemplate:sub>
+</patTemplate:tmpl>
+</select>
+</p>
+
+<!-- figFile -->
+<p>
+Figure: 
+<patTemplate:tmpl name="figFile" type="condition" conditionvar="IS_CHECKED">
+  <patTemplate:sub condition="1">
+  {PADDING}
+  <input type="radio" name="figFile" value="{VALUE}" checked="checked"/>
+  <img src="{VSS_IMAGE_DATA}{VALUE}.png" alt="figure" style="vertical-align: middle;"/>
+  </patTemplate:sub>
+  <patTemplate:sub condition="default">
+  {PADDING}
+  <input type="radio" name="figFile" value="{VALUE}"/>
+  <img src="{VSS_IMAGE_DATA}{VALUE}.png" alt="figure" style="vertical-align: middle;"/>
+  </patTemplate:sub>
+</patTemplate:tmpl>
+</p>
+
+</form>
+</div>
+
+</div>
+</patTemplate:tmpl>

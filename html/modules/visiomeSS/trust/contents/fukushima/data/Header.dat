@@ -1,0 +1,392 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: 40 40 546 379
+%%Creator: Fukushima
+%%EndComments
+
+% ###################################
+% ##  PARAMERTERS FOR THE DISPLAY  ##
+% ###################################
+
+% Parameters for all layers
+/wframe 1 def			% linewidth of the frame
+/X0 40 def				% x location of the lower left corner of the display
+/Y0 40 def				% y location of the lower left corner of the display
+
+% Layer U0
+/U0cells 65 def			% number of horizontal and vertical cells in a plane
+/U0plnumber 1 def		% number of planes in a layer, to be redefined later
+/U0plrowsmax 1 def		% number of planes in a column
+/U0patsize 65 def		% size of pat without frame
+
+/sep0G 10 def			% horizontal sepatarion between layers U0 and UG
+
+% Layer UG
+/UGcells 65 def			% number of horizontal and vertical cells in a plane
+/UGplnumber 2 def		% number of planes in a layer, to be redefined later
+/UGplrowsmax 2 def 		% number of planes in a column
+/UGpatsize 65 def		% size of pat without frame
+
+/sepGC1 10 def			% horizontal sepatarion between layers UG and UC1
+
+% Layer UC1
+/UC1cells 35 def		% number of horizontal and vertical cells in a plane
+/UC1plnumber 16 def		% number of planes in a layer, to be redefined later
+/UC1plrowsmax 8 def		% number of planes in a column
+/UC1patsize 35 def		% size of pat without frame
+
+/sepC1C2 10 def			% horizontal sepatarion between layers UC1 and UC2
+
+% Layer UC2
+/UC2cells 21 def		% number of horizontal and vertical cells in a plane
+/UC2plrowsmax 13 def	% number of planes in a column
+/UC2patsize 21 def		% size of pat without frame
+
+/sepC2C3 10 def			% horizontal sepatarion between layers UC2 and UC3
+
+% Layer UC3
+/UC3cells 11 def		% number of horizontal and vertical cells in a plane
+/UC3plrowsmax 24 def	% number of planes in a column
+/UC3patsize 11 def		% size of pat without frame
+
+/sepC3CL 40 def			% horizontal sepatarion between layers UC3 and UC4
+
+% Layer UCL
+/UCLplnumber 26 def		% number of planes (= cells) in a layer, to be redefined
+/UCLpatsize 7 def		% size of a cell without frame
+/UCLpitch 11.2 def		% pitch of the planes
+
+/sepGMx -50 def			% x location of layer UM relative to UG
+/sepGMy  U0patsize UC1patsize wframe add UC1plrowsmax mul sub wframe add  def
+						% y location of layer UM relative to UG
+
+% === LETTER STRINGS (U0, UG, UC1, UC1, etc) ===
+/letterSep 9 def		% separation between a frame and the letters
+/lettersize 18 def		% size of letter (U)
+/suffixsize 15 def		% size of the suffix
+/downSuffix 4 def		% the amount of downward shift of the suffix
+/stringSep 6 def		% separation between frame and the string
+
+/stringsizeL 17 def		% size of large string below the layer
+/stringsizeS 15 def		% size of small string below the layer
+
+/UCLcharsize 13 def		% character size for UCL
+/UCLcharSep 5 def		% location of the characters in UCL
+/UCLstringX -35 def		% x location of string
+/UCLstringY 0 def		% y location of string below the layer
+
+% === Parameters for the cross ===
+/wcross 10 def			% line width of the cross
+/lcross 40 def			% half line-length of the cross
+/graycross 0.5 def		% gray level of the cross
+/drawcross 0 def		% default (no cross), if ==1 draw cross
+
+
+% === PARAMETERS AUTOMATICALLY DERIVED FROM THE ABOVE PARAMETERS ===
+/wframe2  wframe 2 div  def						% half of the linewidth
+
+
+% #################################
+% ##  --- DEFINE PROCEDURES ---  ##
+% #################################
+
+% Define an isolated cell-plane
+/plane {
+  gsave
+
+  % Draw frame
+  /framesize  patsize wframe add  def
+  newpath
+  wframe2  wframe2 neg  moveto					% starting point, upper left
+  framesize 0 rlineto							% top side
+  0  framesize neg  rlineto						% right side
+  framesize neg  0  rlineto						% bottom side
+  closepath										% complete the frame
+  wframe setlinewidth 							% linewidth of the frame
+  stroke										% draw frame
+
+  % Draw cells
+  wframe  wframe neg  translate			% upper left cell of the first plane
+  patsize patsize scale
+  cells cells 4 [cells  0  0  cells neg  0  0] {pat} image
+
+  grestore
+} def
+
+
+% Define a cell-plane to be added
+/addplane {
+  gsave
+
+  % Draw frame
+  /framesize2  patsize wframe2 add  def
+  newpath
+  framesize2 0 moveto							% starting point, upper right
+  0  framesize2 neg  rlineto					% right side
+  framesize2 neg  0  rlineto					% bottom side
+  wframe setlinewidth 							% linewidth of the frame
+  stroke										% draw frame
+
+  % Draw cells
+  patsize patsize scale
+  cells cells 4 [cells  0  0  cells neg  0  0] {pat} image
+
+  grestore
+} def
+
+
+% Define calcSize  ---  Calculate parameters for the layer
+/calcSize {
+  /framesize  patsize wframe add  def
+  /framesize2  patsize wframe2 add  def
+  /plcols  plnumber 1 sub plrowsmax idiv 1 add  def
+  plnumber plrowsmax ge				% if plnumber >= plrowsmax ?, define plrows
+   {/plrows plrowsmax def}			% plnumber >= plrowsmax
+   {/plrows plnumber def} ifelse	% plnumber < plrowsmax
+  /layerheight  framesize plrows mul wframe add  def
+  /layerwidth  framesize plcols mul wframe add  def
+} def
+
+
+% Define layer --- This procedure must be preceded by calcSize
+/layer {
+  gsave
+
+  % Draw left and top side of the frame of the layer
+  wframe2  layerheight neg  moveto				% starting point, lower left
+  wframe2  wframe2 neg  lineto					% left side
+  layerwidth  wframe2 neg  lineto				% top side
+  wframe setlinewidth 							% linewidth of the frame
+  stroke										% draw frame
+
+  % Arrange cell-planes
+  wframe  wframe neg  translate				% upper left cell of the first plane
+  /countplane 0 def								% clear counter (planes)
+  {												% begin loop
+    /pat pattern countplane get def				% get a pattern
+    addplane									% Draw a cell-plane
+    /countplane  countplane 1 add  def			% increase the counter
+    countplane plnumber ge {exit} if			% if countplane > plrows, exit
+    countplane plrows mod  0  eq				% if == 0 ?
+     {framesize  framesize plrows 1 sub mul  translate}
+												% == 0, to the next column
+     {0  framesize neg  translate} ifelse		% else, to the next row
+  } loop										% end loop
+
+  grestore
+} def
+
+
+% Define Write U_suffix,  origin=upper left of layer -- usage: (suffix) U_suffix
+/U_suffix {
+  /suffix exch def
+  /Helvetica findfont
+  lettersize scalefont							% set size of letter (U)
+  setfont
+  0 letterSep rmoveto							% location of letter (U)
+  (U) show										% write (U)
+  /Helvetica findfont
+  suffixsize scalefont							% set size of the suffix
+  setfont
+  0  downSuffix neg  rmoveto					% location of the suffix
+  suffix show									% write suffix
+} def
+
+
+% Define Write string under the plane --- origin=upper left --- usage: (wstring) Wstring
+/Wstring {
+  /wstring exch def
+  /Helvetica findfont
+  stringsize scalefont							% set size of string
+  setfont
+  0  stringSep stringsize 0.7 mul add neg  rmoveto		% location of string
+  wstring show									% write string
+} def
+
+
+% Define layer UCL
+/layerUCL {
+  gsave
+    % Set font
+    /Helvetica findfont
+    UCLcharsize scalefont						% set size of characters
+    setfont
+
+    /framesize  UCLpatsize wframe add  def		% a plane with one side of frame
+    wframe  wframe neg  translate				% the first cell (= plane)
+    /countplane 0 def							% clear counter (planes)
+    {											% begin loop
+      % Draw a frame
+      newpath
+      wframe2 neg  wframe2  moveto				% starting point, upper left
+      framesize 0 rlineto						% top side
+      0  framesize neg  rlineto					% right side
+      framesize neg  0  rlineto					% bottom side
+      closepath									% complete the frame
+      wframe setlinewidth 						% linewidth of the frame
+      stroke									% draw frame
+
+      % Draw a cell (= plane)
+      /pat UC4pattern countplane get def		% get a cell
+      gsave
+        UCLpatsize UCLpatsize scale				% size of a cell
+        1 1 4 [1  0  0  -1  0  0] {pat} image	% Draw a cell
+      grestore
+
+      % Put a letter to the right of the cell
+        framesize UCLcharSep add  UCLcharsize 0.7 mul neg  moveto
+												% location of the letter
+        [(A)(B)(C)(D)(E)(F)(G)(H)(I)(J)(K)(L)(M)
+         (N)(O)(P)(Q)(R)(S)(T)(U)(V)(W)(X)(Y)(Z)] countplane get  show
+												% write a letter
+
+      /countplane  countplane 1 add  def		% increase the counter
+      countplane UCLplnumber ge {exit} if		% if countplane > plrows, exit
+      0  UCLpitch neg  translate				% to the next cell
+    } loop										% end loop
+  grestore
+} def
+
+
+% Define display  ===== MAIN PROCEDURE =====
+/display {
+  gsave
+
+  /stringsize stringsizeL def
+
+  X0  UC1patsize wframe add UC1plrowsmax mul wframe add stringSep add stringsize add Y0 add  translate
+												% location of the first layer
+
+  % draw U0
+  /plnumber U0plnumber def						% set plnumber
+  /plrowsmax U0plrowsmax def					% set plrowsmax
+  /patsize U0patsize def						% set patsize
+  calcSize										% calculate parameters
+  /cells U0cells def							% number of pxls / plane
+  /pat  U0pattern 0 get  def					% set a pattern (for a plane)
+  plane											% draw a plane
+  0 0 moveto									% location of the letters
+  (0) U_suffix									% write letters U0
+  0  layerheight neg  moveto					% location of string
+  (   input) Wstring
+  layerwidth sep0G add  0  translate			% location of the next layer
+
+
+  % draw UM  ---  use the same parameters calculated by calcSize for U0
+  /plnumber U0plnumber def						% set plnumber
+  /plrowsmax U0plrowsmax def					% set plrowsmax
+  /patsize U0patsize def						% set patsize
+  gsave
+    sepGMx sepGMy translate						% to the location of UM
+    /pat  UMpattern 0 get  def					% set a pattern (for a plane)
+    plane										% draw a plane
+    0 0 moveto									% location of the letters
+    (M) U_suffix								% write letters U0
+    0  layerheight neg  moveto					% location of string
+    ( masker) Wstring
+
+    % draw cross
+    drawcross 1 eq {							% if drawcross==1
+      newpath
+      /center  patsize 2 div wframe add  def	% center of the frame
+      center lcross sub  center lcross add neg  moveto
+      center lcross add  lcross center sub  lineto
+      center lcross sub  lcross center sub  moveto
+      center lcross add  center lcross add neg  lineto
+      wcross setlinewidth
+      graycross setgray
+      stroke } if								% if so, draw cross
+  grestore
+
+
+  % draw UG
+  /patsize UGpatsize def						% set patsize
+  /plnumber UGplnumber def						% set plnumber
+  /plrowsmax UGplrowsmax def					% set plrowsmax
+  calcSize
+  /cells UGcells def							% number of pxls / plane
+  /pattern UGpattern def							% set pattern
+  layer											% draw layer
+  0 0 moveto									% location of the letters
+  (G) U_suffix									% write letters UG
+  0  layerheight neg  moveto					% location of string
+												% location of string
+  (contrast) Wstring 
+  0  layerheight stringsizeL 1.2 mul add neg  moveto
+												% location of string
+  /stringsize stringsizeS def
+  ( on- and) Wstring 
+  0  layerheight stringsizeL 1.2 mul add stringsizeS add neg  moveto
+												% location of string
+  (off-center) Wstring
+  /stringsize stringsizeL def
+  layerwidth sepGC1 add  0  translate			% location of the next layer
+
+
+  % draw UC1
+  /plnumber UC1plnumber def						% set plnumber
+  /plrowsmax UC1plrowsmax def					% set plrowsmax
+  /patsize UC1patsize def						% set patsize
+  calcSize
+  /cells UC1cells def							% number of pxls / plane
+  /pattern UC1pattern def							% set pattern
+  layer											% draw layer
+  0 0 moveto									% location of the letters
+  (C1) U_suffix									% write letters UC1
+  0  layerheight neg  moveto					% location of string
+  (   edges) Wstring
+  /UC1layerheight layerheight def
+  layerwidth sepC1C2 add  0  translate			% location of the next layer
+
+
+  % draw UC2
+  /plnumber UC2plnumber def						% set plnumber
+  /plrowsmax UC2plrowsmax def					% set plrowsmax
+  /patsize UC2patsize def						% set patsize
+  calcSize
+  /cells UC2cells def							% number of pxls / plane
+  /pattern UC2pattern def							% set pattern
+  layer											% draw layer
+  0 0 moveto									% location of the letters
+  (C2) U_suffix									% write letters UC2
+  0  UC1layerheight neg  moveto					% location of string
+  (  higher-order features) Wstring
+  layerwidth sepC2C3 add  0  translate			% location of the next layer
+
+
+  % draw UC3
+  /plnumber UC3plnumber def						% set plnumber
+  /plrowsmax UC3plrowsmax def					% set plrowsmax
+  /patsize UC3patsize def						% set patsize
+  calcSize
+  /cells UC3cells def							% number of pxls / plane
+  /pattern UC3pattern def							% set pattern
+  layer											% draw layer
+  0 0 moveto									% location of the letters
+  (C3) U_suffix									% write letters UC3
+  layerwidth sepC3CL add  0  translate			% location of the next layer
+
+
+  % draw UCL
+  layerUCL										% draw layer
+  -3 0 moveto									% location of the letters
+  (C4) U_suffix									% write letters UC1
+  UCLstringX  UC1layerheight neg  moveto		% location of string
+  (recognition) Wstring
+
+  grestore
+} def
+
+
+% ################################
+% ##  Patterns to be displayed  ##
+% ################################
+
+% Insert hexadecimal (4-bit binary) data below!
+%   for layers U0, UG, UC1, UC2, UC3 and UC4
+%	Exsample:
+%		/UC3plnumber 36 def					% number of planes in a layer
+%		/UC3pattern 36 array def			% define an array for a layer
+%		/UC3pattern [<...> ... <...>] def	% data for the layer
+%    followed by command "/drawcross 1 def" or "/drawcross 0 def",
+%                and then "display".
+% ==================================================================

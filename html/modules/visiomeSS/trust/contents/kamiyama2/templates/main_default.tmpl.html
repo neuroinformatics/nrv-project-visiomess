@@ -1,0 +1,67 @@
+<patTemplate:tmpl name="main">
+<!-- Header -->
+<h2 class="visiomess_title">Revised Hodgkin-Huxley Model by Clay</h2>
+<div class="visiomess_author">
+   Yoshimi Kamiyama<br />
+   kamiyama@ist.aichi-pu.ac.jp
+</div>
+
+<hr />
+
+<!-- body -->
+<div class="visiomess_section">
+<h4>Original Report</h4>
+<p>Clay, J, R. (1998), Excitability of the Squid Gian Axon Revisited, Journal of Neurophysiology, Vol.80, pp.903-913 PubMed: 9705477</p>
+</div>
+
+<hr />
+
+<!-- main -->
+<div class="visiomess_section">
+<p>This package contains the following files:</p>
+<dl>
+  <dt>README.txt</dt>
+  <dd>This file.</dd>
+  <dt>hh.mdl</dt>
+  <dd>Classical HH Model written in NCS language.</dd>
+  <dt>hh.sl</dt>
+  <dd>SATELLITE shell script file for the Classical HH.</dd>
+  <dt>clay.mdl</dt>
+  <dd>Revised HH Model written in NCS language.</dd>
+  <dt>cray.sl</dt>
+  <dd>SATELLITE shell script file for the Revised HH.</dd>
+  <dt>hh-cray.sl</dt>
+  <dd>SATELLITE shell script file for running the models.</dd>
+</dl>
+</div>
+
+<div class="visiomess_section">
+<h4>HOW TO RUN</h4>
+<ol>
+  <li>
+    This package is running with SATELLITE system developed at Biological &amp; Physiological Engineering Laboratory, Toyohashi University of Technology. SATELLITE will be found in the followings:
+    <ul>
+      <li style="list-style: none outside;">http://satellite.sourceforge.jp/</li>
+    </ul>
+  </li>
+  <li>Put all files in the same working directory.</li>
+  <li>In the working directory, run SATELLITE by "sl" command.</li>
+  <li>Execute the script by "inline("hh-clay.sl")".</li>
+</ol>
+<p>The simulation results as in Figure 3 of the reference paper will be displayed on the screen.</p>
+</div>
+
+<div class="visiomess_section">
+<p>For further information, please contact:</p>
+
+<pre>
+  Yoshimi Kamiyama (kamiyama@ist.aichi-pu.ac.jp)
+  Faculty of Information System and Technology
+  Aichi Prefectural University
+  Nagakute, Aichi, 480-1198 Japan
+  // Copyright 2003, KAMIYAMA Yoshimi
+  // &#36;Revision: 1.4 $ Last updated &#36;Date: 2003/03/04 05:24:29 &#36;
+  // &#36;Author: kamiyama &#36;
+</pre>
+</div>
+</patTemplate:tmpl>

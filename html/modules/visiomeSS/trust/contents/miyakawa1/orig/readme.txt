@@ -1,0 +1,5 @@
+Dependence of linearity on the inter-stimulus interval under blockade of GABA receptors
+
+Ryosuke Enoki, Masashi Inoue, Yoshinori Hashimoto, Yoshihisa Kudo ,   and Hiroyoshi Miyakawa
+
+A: Representative traces of PSPs at an inter-stimulus interval (ISI) of -10ms. Summation was sub-linear in normal conditions and in the presence of 20mM Bicuculline (BIC) plus 10mM Picrotoxin (PIC), but was nearly linear in the presence of the combination of 20mM BIC, 10mmM PIC and 1mM CGP55845A(CGP). Each trace is the average of 5-20 trials. B: Dependence of the linearity on the ISI in the presence of blockers for GABAA receptors (gray line), and in the presence of blockers for both GABAA and GABAB receptors (light gray line). The asterisks indicate significant deviations from linearity (Student t-test: *, p<0.01; **, p<0.05). Error bars represent the SEM.

@@ -1,0 +1,66 @@
+<patTemplate:tmpl name="main">
+<script type="text/javascript">
+<!--
+function visiomess_swap_image( num ) {
+  var prefix = 'visiomess_{VSS_COMMON_SUBDIR}_';
+  var el_img = document.getElementById( prefix + 'figure_img' );
+  el_img.src = '{VSS_IMAGE_RESULT_JS}out' + num + '.png';
+  return false;
+}
+-->
+</script>
+<div class="visiomess_section">
+<h4>Simulation Results</h4>
+<button onclick="return visiomess_swap_image( '000' );">out000</button>
+<button onclick="return visiomess_swap_image( '001' );">out001</button>
+<button onclick="return visiomess_swap_image( '002' );">out002</button>
+<button onclick="return visiomess_swap_image( '003' );">out003</button>
+&nbsp;&nbsp;
+<button onclick="return visiomess_swap_image( '010' );">out010</button>
+<button onclick="return visiomess_swap_image( '011' );">out011</button>
+<button onclick="return visiomess_swap_image( '012' );">out012</button>
+<button onclick="return visiomess_swap_image( '013' );">out013</button>
+&nbsp;&nbsp;<br />
+<button onclick="return visiomess_swap_image( '020' );">out020</button>
+<button onclick="return visiomess_swap_image( '021' );">out021</button>
+<button onclick="return visiomess_swap_image( '022' );">out022</button>
+<button onclick="return visiomess_swap_image( '023' );">out023</button>
+&nbsp;&nbsp;
+<button onclick="return visiomess_swap_image( '030' );">out030</button>
+<button onclick="return visiomess_swap_image( '031' );">out031</button>
+<button onclick="return visiomess_swap_image( '032' );">out032</button>
+<button onclick="return visiomess_swap_image( '033' );">out033</button>
+&nbsp;&nbsp;<br />
+<button onclick="return visiomess_swap_image( '040' );">out040</button>
+<button onclick="return visiomess_swap_image( '041' );">out041</button>
+<button onclick="return visiomess_swap_image( '042' );">out042</button>
+<button onclick="return visiomess_swap_image( '043' );">out043</button>
+&nbsp;&nbsp;
+<button onclick="return visiomess_swap_image( '050' );">out050</button>
+<button onclick="return visiomess_swap_image( '051' );">out051</button>
+<button onclick="return visiomess_swap_image( '052' );">out052</button>
+<button onclick="return visiomess_swap_image( '053' );">out053</button>
+&nbsp;&nbsp;<br />
+<button onclick="return visiomess_swap_image( '060' );">out060</button>
+<button onclick="return visiomess_swap_image( '061' );">out061</button>
+<button onclick="return visiomess_swap_image( '062' );">out062</button>
+<button onclick="return visiomess_swap_image( '063' );">out063</button>
+&nbsp;&nbsp;
+<button onclick="return visiomess_swap_image( '070' );">out070</button>
+<button onclick="return visiomess_swap_image( '071' );">out071</button>
+<button onclick="return visiomess_swap_image( '072' );">out072</button>
+<button onclick="return visiomess_swap_image( '073' );">out073</button>
+&nbsp;&nbsp;<br />
+<button onclick="return visiomess_swap_image( '080' );">out080</button>
+<button onclick="return visiomess_swap_image( '081' );">out081</button>
+<button onclick="return visiomess_swap_image( '082' );">out082</button>
+<button onclick="return visiomess_swap_image( '083' );">out083</button>
+&nbsp;&nbsp;
+<button onclick="return visiomess_swap_image( '090' );">out090</button>
+<button onclick="return visiomess_swap_image( '091' );">out091</button>
+<button onclick="return visiomess_swap_image( '092' );">out092</button>
+<button onclick="return visiomess_swap_image( '093' );">out093</button>
+&nbsp;&nbsp;<br />
+<img id="visiomess_{VSS_COMMON_SUBDIR}_figure_img" src="{VSS_IMAGE_RESULT}out000.png" alt="result"/>
+</div>
+</patTemplate:tmpl>

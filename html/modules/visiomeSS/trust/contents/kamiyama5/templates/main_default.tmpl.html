@@ -1,0 +1,75 @@
+<patTemplate:tmpl name="main">
+<!-- Header -->
+<h2 class="visiomess_title"> Ionic Current Model of Fish Retinal Horizontal Cell</h2>
+<div class="visiomess_author">
+   Yoshimi Kamiyama and Toshihiro Aoyama<br />
+   kamiyama@ist.aichi-pu.ac.jp, aoyama@brain.riken.go.jp
+</div>
+
+<hr />
+
+<!-- body -->
+<div class="visiomess_section">
+<h4>Original Report</h4>
+<p>Aoyama, T., Kamiyama, Y. and Usui. S. (2002)
+   Simulation analysis of current-voltage relationship of retinal
+   horizontal cells The Transactions of the Institute of Electronics,
+   Information and Communication Engineers, Vol.J85-D-II, 918-930</p>
+</div>
+
+<hr />
+
+<!-- main -->
+<div class="visiomess_section">
+<p>This package contains the following files:</p>
+<dl>
+  <dt>Readme.txt</dt>
+  <dd>This file.</dd>
+  <dt>ICa.mdl</dt>
+  <dd>Ca Model descriptions written in NCS language.</dd>
+  <dt>ICa_double_compute.sl</dt>
+  <dd>SATELLITE shell script file for running the Ca model.
+     The script writes the results in three data files, 
+     ICa_double.dat, Ca_double.dat, ICa_double_stim.dat.</dd>
+  <dt>ICa_double.sl</dt>
+  <dd>SATELLITE shell script file for the Ca model. The script
+      reads the data files and displays the results.</dd>
+  <dt>fishHC.mdl</dt>
+  <dd>Horizontal Cell Model descriptions written in NCS language.</dd>
+  <dt>Glu_resp_compute.sl</dt>
+  <dd>SATELLITE shell script file for simulating the responses to
+     Glutamate application. The script produces four files,
+     control_V.dat, control_Ca.dat, withoutSB_V.dat, withoutSB_Ca.dat.</dd>
+  <dt>Glu_resp.sl</dt>
+  <dd>SATELLITE shell script file for displaying the responses to
+     Glutamate application. </dd>
+</dl>
+</div>
+
+<div class="visiomess_section">
+<h4>HOW TO RUN</h4>
+<ol>
+  <li>
+    This package is running with SATELLITE system developed at Biological &amp; Physiological Engineering Laboratory, Toyohashi University of Technology. SATELLITE will be found in the followings:
+    <ul>
+      <li style="list-style: none outside;">http://satellite.sourceforge.jp/</li>
+    </ul>
+  </li>
+  <li>Put all files in the same working directory.</li>
+  <li>In the working directory, run SATELLITE by "sl" command.</li>
+  <li>Execute the script by inline command, e.g. "inline("ICa_double.sl")".</li>
+</ol>
+<p>The simulation results as in Figure 3 and 5 of the reference paper will be displayed on the screen.</p>
+</div>
+
+<div class="visiomess_section">
+<p>For further information, please contact:</p>
+
+<pre>
+  Yoshimi Kamiyama (kamiyama@ist.aichi-pu.ac.jp)
+  Faculty of Information System and Technology
+  Aichi Prefectural University
+  Nagakute, Aichi, 480-1198 Japan
+</pre>
+</div>
+</patTemplate:tmpl>

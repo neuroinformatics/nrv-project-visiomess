@@ -1,0 +1,38 @@
+<patTemplate:tmpl name="main">
+<div class="visiomess_section">
+<h4>{TITLE}</h4>
+
+<patTemplate:tmpl name="body" type="condition" conditionvar="IS_EMPTY">
+
+<patTemplate:sub condition="1">
+<p>no results found</p>
+</patTemplate:sub>
+
+<patTemplate:sub condition="default">
+<div class="visiomess_form">
+<form method="post" action="?s={VSS_COMMON_SUBDIR}&amp;p={VSS_COMMON_PAGE}">
+<input type="hidden" name="a" value="result"/>
+<ul>
+
+  <patTemplate:tmpl name="results" type="condition" conditionvar="IS_CHECKED">
+
+  <patTemplate:sub condition="1">
+  <li><input type="radio" name="ctime" value="{VALUE}" checked="checked"/>{LABEL}</li>
+  </patTemplate:sub>
+
+  <patTemplate:sub condition="default">
+  <li><input type="radio" name="ctime" value="{VALUE}"/>{LABEL}</li>
+  </patTemplate:sub>
+
+  </patTemplate:tmpl>
+
+</ul>
+<input name="submit_update" type="submit" value="View Result"/>
+</form>
+</div>
+</patTemplate:sub>
+
+</patTemplate:tmpl>
+
+</div>
+</patTemplate:tmpl>

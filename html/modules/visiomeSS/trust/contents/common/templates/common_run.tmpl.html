@@ -1,0 +1,15 @@
+<patTemplate:tmpl name="main">
+<div class="visiomess_section">
+<h4>{TITLE}</h4>
+{RESULTS}
+<patTemplate:tmpl name="form">
+  <div class="visiomess_form">
+  <form method="post" action="?s={VSS_COMMON_SUBDIR}&amp;p={VSS_COMMON_PAGE}">
+    <input type="hidden" name="a" value="result"/>
+    <input type="hidden" value="{CTIME}" name="ctime"/>
+    <input type="submit" name="submit" value="View Result"/>
+  </form>
+  </div>
+</patTemplate:tmpl>
+</div>
+</patTemplate:tmpl>

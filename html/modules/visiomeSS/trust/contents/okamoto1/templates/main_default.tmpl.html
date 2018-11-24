@@ -1,0 +1,81 @@
+<patTemplate:tmpl name="main">
+<script type="text/javascript">
+<!--
+function visiomess_swap_image( t, num ) {
+  var prefix = 'visiomess_{VSS_COMMON_SUBDIR}_';
+  var img_path = '{VSS_IMAGE_DATA_JS}';
+  var type = 'component';
+  if ( t == 'p' ) {
+    type = 'pattern';
+  }
+  var el_a = document.getElementById( prefix + type + '_anchor' );
+  var el_i = document.getElementById( prefix + type + '_image' );
+  el_a.href = img_path + type + num + '.png';
+  el_i.src = img_path + type + num + 's.png';
+  return false;
+}
+//-->
+</script>
+
+<!-- Header -->
+<h2 class="visiomess_title">Interactive illustration for mechanism of two types of bimodal direction tuning</h2>
+<div class="visiomess_author">
+  Okamoto H<br />
+  h-okamoto@jp.fujitsu.com
+</div>
+
+<hr />
+
+<!-- body -->
+<div class="visiomess_section">
+<h3 class="visiomess_center">Two types of bimodal direction tuning</h3>
+
+<table>
+  <tr>
+    <td class="visiomess_center"><span class="visiomess_bold_large">Component cell</span></td>
+    <td class="visiomess_center"><span class="visiomess_bold_large">Pattern cell</span></td>
+  </tr>
+  <tr>
+    <td class="visiomess_center">(1-D velocity detection)</td>
+    <td class="visiomess_center">(2-D velocity detection)</td>
+  </tr>
+  <tr>
+    <td class="visiomess_center"><a id="visiomess_{VSS_COMMON_SUBDIR}_component_anchor" href="{VSS_IMAGE_DATA}component0.png" target="_blank"><img id="visiomess_{VSS_COMMON_SUBDIR}_component_image" src="{VSS_IMAGE_DATA}component0s.png" alt="component"/></a></td>
+    <td class="visiomess_center"><a id="visiomess_{VSS_COMMON_SUBDIR}_pattern_anchor" href="{VSS_IMAGE_DATA}pattern0.png" target="_blank"><img id="visiomess_{VSS_COMMON_SUBDIR}_pattern_image" src="{VSS_IMAGE_DATA}pattern0s.png" alt="pattern"/></a></td>
+  </tr>
+  <tr>
+    <td>
+      Moving stimulus activating a component cell
+      <ul>
+        <li><a href="javascript:void(0);" onclick="return visiomess_swap_image( 'c', 0 );">Bar at optimal speed</a></li>
+        <li><a href="javascript:void(0);" onclick="return visiomess_swap_image( 'c', 1 );">Spot at optimal speed</a></li>
+        <li><a href="javascript:void(0);" onclick="return visiomess_swap_image( 'c', 2 );">Spot at higher speed</a></li>
+        <li><a href="javascript:void(0);" onclick="return visiomess_swap_image( 'c', 3 );">Spot at more higher speed</a></li>
+        <li><a href="javascript:void(0);" onclick="return visiomess_swap_image( 'c', 4 );">Shift of optimal direction at each speed for a spot</a></li>
+      </ul>
+    </td>
+    <td>
+      Moving stimulus activating a pattern cell
+      <ul>
+        <li><a href="javascript:void(0);" onclick="return visiomess_swap_image( 'p', 0 );">Spot at optimal speed</a></li>
+        <li><a href="javascript:void(0);" onclick="return visiomess_swap_image( 'p', 1 );">Bar at optimal speed</a></li>
+        <li><a href="javascript:void(0);" onclick="return visiomess_swap_image( 'p', 2 );">Bar at lower speed</a></li>
+        <li><a href="javascript:void(0);" onclick="return visiomess_swap_image( 'p', 3 );">Bar at more lower speed</a></li>
+        <li><a href="javascript:void(0);" onclick="return visiomess_swap_image( 'p', 4 );">Shift of optimal direction at each speed for a bar</a></li>
+      </ul>
+    </td>
+  </tr>
+  <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+  <tr>
+    <td>
+Bimodal direction tuning appears at <span class="visiomess_bold">higher</span> speed than optimal for moving <span class="visiomess_bold">spot</span> stimulus. This property reflects the characteristics of <span class="visiomess_bold">Hough transformation</span>.
+    </td>
+    <td>
+Bimodal direction tuning appears at <span class="visiomess_bold">lower</span> speed than optimal for moving <span class="visiomess_bold">bar</span> stimulus.
+This property reflects the characteristics of <span class="visiomess_bold">inverse Hough transformation</span>.
+    </td>
+  </tr>
+</table>
+
+</div>
+</patTemplate:tmpl>

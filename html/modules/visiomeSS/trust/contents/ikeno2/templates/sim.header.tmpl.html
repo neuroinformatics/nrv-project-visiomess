@@ -1,0 +1,36 @@
+<patTemplate:tmpl name="header">
+<script type="text/javascript">
+<!--
+function visiomess_submit( act ) {
+  var prefix = 'visiomess_{VSS_COMMON_SUBDIR}_';
+  var el_form = document.getElementById( prefix + 'form' );
+  var el_action = document.getElementById( prefix + 'action' );
+  el_action.value = act;
+  el_form.submit();
+  return false;
+}
+-->
+</script>
+<!-- Header -->
+<h2 class="visiomess_title">Bee Vision</h2>
+<p>
+To execute BeeVision simulation, click "Run Program", first. Then, to view
+simulation results, click "View Results" and select newest results. You
+can edit config filein oder to modify the model and simulation conditions.
+</p>
+
+<div class="visiomess_form">
+<form id="visiomess_{VSS_COMMON_SUBDIR}_form" method="post" action="?s={VSS_COMMON_SUBDIR}&amp;p={VSS_COMMON_PAGE}">
+  <input id="visiomess_{VSS_COMMON_SUBDIR}_action" type="hidden" name="a" value="default"/>
+  <input type="button" onclick="return visiomess_submit('run');" value="Run Program"/>
+  &nbsp;
+  <input type="button" onclick="return visiomess_submit('view');" value="View Results"/>
+  &nbsp;
+  <input type="button" onclick="return visiomess_submit('edit');" value="Edit Conditions"/>
+  &nbsp;
+  <input type="button" onclick="return visiomess_submit('reset');" value="Reset Conditions"/>
+</form>
+</div>
+
+<hr />
+</patTemplate:tmpl>

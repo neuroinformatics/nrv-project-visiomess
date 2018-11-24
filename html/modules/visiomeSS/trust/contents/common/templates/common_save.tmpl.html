@@ -1,0 +1,18 @@
+<patTemplate:tmpl name="main">
+<div class="visiomess_section">
+<h4>Save {TITLE}</h4>
+<patTemplate:tmpl name="body" type="condition" conditionvar="IS_ERROR">
+  <patTemplate:sub condition="1">
+  <p>invalid parameter format</p>
+  <ul>
+    <patTemplate:tmpl name="errors">
+    <li>{ERROR}</li>
+    </patTemplate:tmpl>
+  </ul>
+  </patTemplate:sub>
+  <patTemplate:sub condition="default">
+  {PARAM}
+  </patTemplate:sub>
+</patTemplate:tmpl>
+</div>
+</patTemplate:tmpl>

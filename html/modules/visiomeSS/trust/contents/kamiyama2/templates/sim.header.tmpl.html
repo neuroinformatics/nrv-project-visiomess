@@ -1,0 +1,46 @@
+<patTemplate:tmpl name="header">
+<script type="text/javascript">
+<!--
+function visiomess_submit( act ) {
+  var prefix = 'visiomess_{VSS_COMMON_SUBDIR}_';
+  var el_form = document.getElementById( prefix + 'form' );
+  var el_action = document.getElementById( prefix + 'action' );
+  el_action.value = act;
+  el_form.submit();
+  return false;
+}
+-->
+</script>
+<!-- Header -->
+<h2 class="visiomess_title">Revised Hodgkin-Huxley Model by Clay</h2>
+<p>
+You can simulate and compare revised H-H model by Clay with original H-H model. Click
+"Run Script" for starting simulation, then "View Result" for plotting the result.
+You can review the previous simulation results by clicking "View Results".
+</p>
+
+<div class="visiomess_form">
+<form id="visiomess_{VSS_COMMON_SUBDIR}_form" method="post" action="?s={VSS_COMMON_SUBDIR}&amp;p={VSS_COMMON_PAGE}">
+  <input id="visiomess_{VSS_COMMON_SUBDIR}_action" type="hidden" name="a" value="default"/>
+  <input type="button" onclick="return visiomess_submit('run');" value="Run Script"/>
+  &nbsp;
+  <input type="button" onclick="return visiomess_submit('view');" value="View Results"/>
+  &nbsp;
+  <input type="button" onclick="return visiomess_submit('reset');" value="Reset"/>
+  <br />
+  Edit MDL Files :
+  <input type="button" onclick="return visiomess_submit('emclay');" value="clay.mdl"/>
+  &nbsp;
+  <input type="button" onclick="return visiomess_submit('emhh');" value="hh.mdl"/>
+  <br />
+  Edit SL Files :
+  <input type="button" onclick="return visiomess_submit('esclay');" value="clay.sl"/>
+  &nbsp;
+  <input type="button" onclick="return visiomess_submit('eshh');" value="hh.sl"/>
+  &nbsp;
+  <input type="button" onclick="return visiomess_submit('eshhclay');" value="hh-clay.sl"/>
+</form>
+</div>
+
+<hr />
+</patTemplate:tmpl>

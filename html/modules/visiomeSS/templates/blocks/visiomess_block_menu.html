@@ -1,0 +1,82 @@
+<script type="text/javascript">
+<!--
+function visiomess_menu_setcookie( num, val ) {
+  var name = '<{$smarty.const.VSS_MENUBLOCK_COOKIE}>' + num + '=' + val + ';';
+  // var domain = 'domain=' + '<{$block.cookie_domain}>' + ';';
+  var domain= '';
+  var path = 'path=' + '<{$block.cookie_path}>' + ';';
+  document.cookie = name + domain + path;
+}
+
+function visiomess_menu_toggle( num ) {
+  var id = 'visiomess_menu_block' + num;
+  var el = document.getElementById( id );
+  if ( typeof el == undefined ) {
+    alert( 'element not found' );
+    return false;
+  }
+  var disp = el.style.display;
+  var val = 0;
+  if ( disp == 'block' ) {
+    el.style.display = 'none';
+  } else {
+    el.style.display = 'block';
+    val = 1;
+  }
+  visiomess_menu_setcookie( num, val );
+  return false;
+}
+//-->
+</script>
+<div style="font-weight: bold;">Experiments</div>
+
+<div style="font-weight: bold; margin-left: 10px;">
+  <a href="javascript:void()" onclick="return visiomess_menu_toggle( '1' );">basic</a>
+</div>
+<ul id="visiomess_menu_block1" style="display:<{$block.disp1}>;">
+  <li><a href="<{$block.mod_url}>/?s=sokabe">A Structure-Function Study on a de novo Synthetic Hydrophobic Ion Channel</a></li>
+  <li><a href="<{$block.mod_url}>/?s=miyakawa1">Dependence of linearity on the inter-stimulus interval under blockade of GABA receptors</a></li>
+  <li><a href="<{$block.mod_url}>/?s=miyakawa2">Dendritic attenuation of synaptic potentiation in hippocampal CA1 pyramidal neurons</a></li>
+</ul>
+
+<div style="font-weight: bold; margin-left: 10px;">
+  <a href="javascript:void()" onclick="return visiomess_menu_toggle( '2' );">retina</a>
+</div>
+<ul id="visiomess_menu_block2" style="display:<{$block.disp2}>;">
+  <li><a href="<{$block.mod_url}>/?s=kaneko">Persistent Na current, fast Na current and Ca current in cultured amacrine cells</a></li>
+  <li><a href="<{$block.mod_url}>/?s=tachibana">Membrane current of ON-transient amacrine cells in the mouse retina</a></li>
+</ul>
+
+<div style="font-weight: bold;">Models</div>
+<div style="font-weight: bold; margin-left: 10px;">
+  <a href="javascript:void()" onclick="return visiomess_menu_toggle( '3' );">basic</a>
+</div>
+<ul id="visiomess_menu_block3" style="display:<{$block.disp3}>;">
+  <li><a href="<{$block.mod_url}>/?s=ichikawa">AMPA receptor channel kinetics in cerebellar Purkinje cell</a></li>
+  <li><a href="<{$block.mod_url}>/?s=ikeno1">Current clamp simulation of Hodgkin-Huxley model</a></li>
+  <li><a href="<{$block.mod_url}>/?s=kamiyama2">Revised Hodgkin-Huxley Model by Clay</a></li>
+</ul>
+
+<div style="font-weight: bold; margin-left: 10px;">
+  <a href="javascript:void()" onclick="return visiomess_menu_toggle( '4' );">retina</a><br />
+</div>
+<ul id="visiomess_menu_block4" style="display:<{$block.disp4}>;">
+  <li><a href="<{$block.mod_url}>/?s=kamiyama1">Rod Photoreceptor Model</a></li>
+  <li><a href="<{$block.mod_url}>/?s=kamiyama3">Ionic Current Model of Bipolar Cell Soma</a></li>
+  <li><a href="<{$block.mod_url}>/?s=kamiyama5">Ionic Current Model of Fish Retinal Horizontal Cell</a></li>
+  <li><a href="<{$block.mod_url}>/?s=kamiyama4">A Stochastic Model of Retinal Ganglion Cell</a></li>
+</ul>
+
+<div style="font-weight: bold; margin-left: 10px;">
+  <a href="javascript:void()" onclick="return visiomess_menu_toggle( '5' );">system</a>
+</div>
+<ul id="visiomess_menu_block5" style="display:<{$block.disp5}>;">
+  <li><a href="<{$block.mod_url}>/?s=fukushima">Recognition of Partly Occluded Patterns: A Neural Network Model</a></li>
+</ul>
+
+<div style="font-weight: bold; margin-left: 10px;">
+  <a href="javascript:void()" onclick="return visiomess_menu_toggle( '6' );">other</a>
+</div>
+<ul id="visiomess_menu_block6" style="display:<{$block.disp6}>;">
+   <li><a href="<{$block.mod_url}>/?s=ikeno2">A reconstruction of projection image on compound eye of heneybee</a></li>
+</ul>

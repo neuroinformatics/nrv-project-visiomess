@@ -1,0 +1,97 @@
+TITLE: Dendritic attenuation of synaptic potentiation in hippocampal CA1 pyramidal neurons
+
+AUTHOR: INOUE Masashi, MIYAKAWA Hiroyoshi 
+
+E-mail address: inou@ls.toyaku.ac.jp
+
+Homepage?Fhttp://www.ls.toyaku.ac.jp/Life-Science/lcn-9/
+
+Original Report?FMasashi Inoue, Yoshinori Hashimoto, Yoshihisa Kudo and Hiroyoshi Miyakawa
+
+European Jouranal of Neurosceince, 13 (2001) 1711-1721
+
+Dendritic attenuation of synaptic potentials in the CA1 region of rat 
+
+hippocampal slices detected with an optical method
+
+
+
+
+
+Synopsis:
+
+We measured fasts excitatory post-synaptic potentials (EPSP) along the dendrites of hippocampal CA1 pyramidal neurons by using an optical method to study how synaptic potentials spread along the dendrites. Rat hippocampal slices were stained with a fluorescent voltage-sensitive dye JPW1114 and optical signals were monitored with a 16 X 16 photodiode array system. Stimulations were delivered at stratum lacunosum-moleculare (LM) to activate perforant pathway inputs that make contacts to the distal apical dendrites or at stratum orience (OR) that make contacts to the basal basal dendrites of CA1 pyramidal neurons. EPSPs at distal apical dendrites can propagate to the soma with attenuation of amplitude with delay of time-to-peak. 
+
+
+
+<fig1.gif>
+
+
+
+[References]
+
+"Dendritic attenuation of synaptic potentials in the CA1 region of rat hippocampal slices detected with an optical method." M Inoue, Y Hashimoto, Y Kudo, and H Miyakawa, Eur. J. Neurosci. ? (2001) ?-?
+
+"Optical detection os synaptically induced glutamate tranpsort in hippocampal slices." S Kojima, T Nakamura, T Nidaira, K Nakamura, N Ooashi, E Ito, K Watase, K Tanaka, K Wada, Y Kudo and H Miyakawa. J. Neurosci.. 19 (1999) 2580-2588
+
+
+
+
+
+About data
+
+
+
+Ascii format data of the EPSPs recorded from 10 detectors (2,7 through 12,7) aligned along the axis of the dendrites are provided. Each column corresponds to a trace shown in the figure. 380 data points were taken at a frame rate of 4 kHz.
+
+
+
+Column A: data number
+
+Column B: time in msec
+
+
+
+Column C: EPSP evoked by LM input recorded at location (2,7)
+
+Column D: EPSP evoked by LM input recorded at location (3,7)
+
+Column E: EPSP evoked by LM input recorded at location (4,7)
+
+Column F: EPSP evoked by LM input recorded at location (5,7)
+
+Column G: EPSP evoked by LM input recorded at location (6,7)
+
+Column H: EPSP evoked by LM input recorded at location (7,7)
+
+Column I: EPSP evoked by LM input recorded at location (8,7)
+
+Column J: EPSP evoked by LM input recorded at location (9,7)
+
+Column K: EPSP evoked by LM input recorded at location (10,7)
+
+Column L: EPSP evoked by LM input recorded at location (11,7)
+
+
+
+
+
+Column N: EPSP evoked by OR input recorded at location (2,7)
+
+Column O: EPSP evoked by OR input recorded at location (3,7)
+
+Column P: EPSP evoked by OR input recorded at location (4,7)
+
+Column Q: EPSP evoked by OR input recorded at location (5,7)
+
+Column R: EPSP evoked by OR input recorded at location (6,7)
+
+Column S: EPSP evoked by OR input recorded at location (7,7)
+
+Column T: EPSP evoked by OR input recorded at location (8,7)
+
+Column U: EPSP evoked by OR input recorded at location (9,7)
+
+Column V: EPSP evoked by OR input recorded at location (10,7)
+
+Column W: EPSP evoked by OR input recorded at location (11,7)

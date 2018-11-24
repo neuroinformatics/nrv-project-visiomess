@@ -1,0 +1,173 @@
+@charset "euc-jp";
+
+/* global */
+a img {
+  margin: 0px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.visiomess_bold {
+  font-weight: bold;
+}
+
+.visiomess_nowrap {
+  white-space: nowrap;
+}
+
+.visiomess_center {
+  text-align: center;
+}
+
+.visiomess_block_center {
+  margin: 10px;
+  text-align: center;
+}
+
+.visiomess_bold_large {
+  font-weight: bold;
+  font-size: large;
+}
+
+.visiomess_red {
+  color: red;
+}
+
+/* main page */
+div.visiomess_main h4 {
+  font-weight: bold;
+  font-size: 12pt;
+  margin: 5px 0px 5px 0px;
+}
+div.visiomess_main dl dt {
+  font-weight: bold;
+}
+div.visiomess_main dl dd {
+  vertical-align: middle;
+}
+
+/* readme page */
+div.visiomess_header_left {
+  float: left;
+}
+div.visiomess_header_right {
+  float: right;
+}
+div.visiomess_header_bottom {
+  clear: both;
+}
+div.visiomess_breadcrumbs {
+  text-align: left;
+  font-size: x-small;
+  font-weight: bold;
+}
+div.visiomess_breadcrumbs a {
+  font-weight: normal;
+}
+div.visiomess_user {
+  text-align: left;
+  font-weight: bold;
+}
+div.visiomess_pf {
+  text-align: right;
+  margin-bottom: 5px;
+}
+div.visiomess_navi {
+  text-align: right;
+}
+
+h2.visiomess_title {
+  font-size: 14pt;
+  text-align: center;
+}
+
+div.visiomess_author {
+  text-align: right;
+  font-style: italic;
+}
+
+div.visiomess_section {
+  margin: 5px 0px 5px 0px;
+}
+div.visiomess_section h4 {
+  text-align: left;
+  text-decoration: underline;
+  padding: 0px;
+  margin: 10px 0px 5px 0px;
+  font-weight: bold;
+  font-size: 10pt;
+}
+div.visiomess_section p {
+  padding: 0px;
+  margin: 10px 0px 0px 10px;
+}
+div.visiomess_section pre {
+  padding: 10px;
+  margin: 5px 10px 5px 10px;
+  border: solid #CCCCCC 1px;
+  font-weight: normal;
+}
+div.visiomess_section ul {
+  margin-left: 20px;
+  list-style-type: square;
+  list-style-position: outside;
+}
+div.visiomess_section ul li {
+  margin-left: 2px;
+  list-style-type: square;
+  list-style-position: outside;
+  color: black;
+}
+div.visiomess_section ol {
+  margin-left: 10px;
+  padding-left: 2em;
+  list-style-type: decimal;
+  list-style-position: outside;
+}
+div.visiomess_section ol li {
+  margin-left: 2px;
+  list-style-type: decimal;
+  list-style-position: outside;
+  color: black;
+}
+div.visiomess_section dl {
+  margin: 5px 10px 5px 10px;
+  border: solid #CCCCCC 1px;
+  padding: 10px;
+}
+div.visiomess_section dl dt {
+  font-style: italic;
+}
+div.visiomess_section dl dd {
+  margin: 2px 0px 5px 15px;
+}
+div.visiomess_figure {
+  margin: 10px;
+  text-align: center;
+}
+div.visiomess_figure_center {
+  margin: 5px;
+  text-align: center;
+}
+div.visiomess_figure p {
+  margin-top: 10px;
+  text-align: left;
+}
+
+div.visiomess_readme hr {
+  text-align: center;
+  width: 80%;
+  margin: 10px auto;
+}
+
+div.visiomess_form {
+  margin: 10px;
+}
+div.visiomess_parameter {
+  padding: 10px;
+  border: solid #CCCCCC 1px;
+  font-size: 9pt;
+  font-family: "Courier New","Courier","Ê¿À®³Ñ¥´¥·¥Ã¥¯","Osaka-ÅùÉý","£Í£Ó ¥´¥·¥Ã¥¯",monospace;
+  font-weight: normal;
+  white-space: nowrap;
+}

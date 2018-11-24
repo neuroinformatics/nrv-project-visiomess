@@ -1,0 +1,145 @@
+<{php}>
+$ua = $_SERVER['HTTP_USER_AGENT'];
+if ((ereg("Windows",$ua) > 0) && (ereg("MSIE",$ua) > 0)) {
+if (ereg("MSIE 6.",$ua) > 0) {
+echo '';
+}
+} else {
+echo '<?xml version="1.0" encoding="'._CHARSET.'"?>';
+echo "\n";
+}
+<{/php}>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<{$xoops_langcode}>" lang="<{$xoops_langcode}>">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-9486798-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-9486798-2');
+</script>
+
+<meta http-equiv="content-type" content="text/html; charset=<{$xoops_charset}>" />
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta name="robots" content="<{$xoops_meta_robots}>" />
+<meta name="keywords" content="<{$xoops_meta_keywords}>" />
+<meta name="description" content="<{$xoops_meta_description}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="<{$xoops_meta_author}>" />
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+<meta name="generator" content="XOOPS" />
+<title><{$xoops_sitename}> - <{$xoops_pagetitle}></title>
+<link href="<{$xoops_url}>/favicon.ico" rel="SHORTCUT ICON" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_url}>/xoops.css" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_themecss}>" />
+<!-- RMV: added module header -->
+<{$xoops_module_header}>
+<script type="text/javascript">
+<!--
+<{$xoops_js}>
+//-->
+</script>
+</head>
+<body>
+  <table cellspacing="0" style="vertical-align: middle;">
+    <tr id="header">
+      <td id="headerlogo" style="vertical-align: middle;">
+<a href="<{$xoops_url}>/"><img src="<{$xoops_imageurl}>visiome.png"  height="40" alt=""/></a></td>
+<td style="vertical-align: left;"> <img src="<{$xoops_imageurl}>title.png" alt=""/></td>
+      <td id="headerbanner">
+<a href="<{$xoops_url}>/"><img src="<{$xoops_imageurl}>home.gif" alt="Home" title="Home"/></a>
+<!--
+<a href="<{$xoops_url}>/modules/news/"><img src="<{$xoops_imageurl}>news.gif" alt="News" title="News"/></a>
+<a href="<{$xoops_url}>/modules/newbb/"><img src="<{$xoops_imageurl}>forum.gif" alt="Forum" title="Forum"/></a>
+<a href="<{$xoops_url}>/modules/mydownloads/"><img src="<{$xoops_imageurl}>down.gif" alt="Download" title="Download"/></a>
+<a href="<{$xoops_url}>/modules/mylinks/"><img src="<{$xoops_imageurl}>link.gif" alt="Link" title="Link"/></a>
+<a href="<{$xoops_url}>/modules/xoopsfaq/"><img src="<{$xoops_imageurl}>faq.gif" alt="FAQ" title="FAQ"/></a>
+-->
+	</td>
+    </tr>
+    <tr>
+      <td id="headerbar" colspan="3">Visiome Simulation Server</td>
+    </tr>
+  </table>
+
+  <table cellspacing="0">
+    <tr>
+      <td id="leftcolumn">
+        <!-- Start left blocks loop -->
+        <{foreach item=block from=$xoops_lblocks}>
+          <{include file="visiomeSS/theme_blockleft.html"}><br />
+        <{/foreach}>
+        <!-- End left blocks loop -->
+      </td>
+
+      <td id="centercolumn">
+
+        <!-- Display center blocks if any -->
+        <{if $xoops_showcblock == 1}>
+
+        <table cellspacing="0">
+          <tr>
+          </tr>
+            <td id="centerCcolumn" colspan="2">
+
+            <!-- Start center-center blocks loop -->
+            <{foreach item=block from=$xoops_ccblocks}>
+              <{include file="visiomeSS/theme_blockcenter_c.html"}>
+            <{/foreach}>
+            <!-- End center-center blocks loop -->
+
+            </td>
+          <tr>
+            <td id="centerLcolumn">
+
+            <!-- Start center-left blocks loop -->
+              <{foreach item=block from=$xoops_clblocks}>
+                <{include file="visiomeSS/theme_blockcenter_l.html"}>
+              <{/foreach}>
+            <!-- End center-left blocks loop -->
+
+            </td><td id="centerRcolumn">
+
+            <!-- Start center-right blocks loop -->
+              <{foreach item=block from=$xoops_crblocks}>
+                <{include file="visiomeSS/theme_blockcenter_r.html"}>
+              <{/foreach}>
+            <!-- End center-right blocks loop -->
+
+            </td>
+          </tr>
+        </table>
+
+        <{/if}>
+        <!-- End display center blocks -->
+
+        <div id="content">
+          <{$xoops_contents}>
+        </div>
+      </td>
+
+      <{if $xoops_showrblock == 1}>
+
+      <td id="rightcolumn">
+        <!-- Start right blocks loop -->
+        <{foreach item=block from=$xoops_rblocks}>
+          <{include file="visiomeSS/theme_blockright.html"}><br />
+        <{/foreach}>
+        <!-- End right blocks loop -->
+      </td>
+
+      <{/if}>
+
+    </tr>
+  </table>
+
+  <table cellspacing="0">
+    <tr id="footerbar">
+      <td><img src="<{$xoops_imageurl}>poweredby.gif" alt=""/></td>
+    </tr>
+  </table>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<div class="visiomess_readme">
+
+<div class="visiomess_header">
+  <div class="visiomess_header_left">
+    <div class="visiomess_breadcrumbs">
+    <{foreach from=$breadcrumbs item="item" name="breadcrumbs"}>
+      <{if ! $smarty.foreach.breadcrumbs.first}>&nbsp;&raquo;&nbsp;<{/if}>
+      <{if $item.url}><a href="<{$item.url}>"><{$item.name}></a><{else}><{$item.name}><{/if}>
+    <{/foreach}>
+    </div>
+    <div class="visiomess_user">user: <{$uname}></div>
+  </div>
+  <div class="visiomess_header_right">
+    <{if $pf_url}>
+    <div class="visiomess_pf"><a href="<{$pf_url}>" title="Visiome Platform" target="_blank"><img src="<{$mod_url}>/images/visiome.png" alt="Visiome Platform"/></a></div>
+    <{/if}>
+    <div class="visiomess_navi">
+      <{foreach from=$navi item=link}>
+      <div class="visiomess_readme_navi_item">
+        <{$link.title}>&nbsp;<a href="<{$mod_url}>/?s=<{$subdir}>&amp;p=<{$link.page}>"><img src="<{$mod_url}>/images/<{$link.icon}>.png" alt="<{$link.icon}>" title="<{$link.title}>"/></a>
+      </div>
+      <{/foreach}>
+    </div>
+  </div>
+  <div class="visiomess_header_bottom"></div>
+</div>
+
+<{$body}>
+
+</div>

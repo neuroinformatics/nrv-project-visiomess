@@ -1,0 +1,53 @@
+<patTemplate:tmpl name="main">
+<div class="visiomess_section">
+<h3>Simulation Result</h3>
+
+<div class="visiomess_section">
+<h4>original image</h4>
+<table>
+  <tr>
+    <td>
+      <a href="{VSS_IMAGE_DATA}{IMG_FILE}" target="_blank"><img src="{VSS_IMAGE_DATA}{IMG_FILE}" alt="results" width="196"/></a>
+    </td>
+    <td>
+      Coordinate of the center of image (x, y, z): {FIG_CENTER}<br />
+      Figure angle(horizontal, vertical): {FIG_ANGLE}<br />
+      Figure pixel size (mm): {FIG_DOTD}<br />
+      Figure size (mm): {FIG_X}, {FIG_Y}<br />
+      Image file name: {IMG_FILE}<br />
+    </td>
+  </tr>
+</table>
+</div>
+
+<div class="visiomess_section">
+<h4>mapping on eye</h4>
+<table>
+  <tr>
+   <td>
+     <a href="{VSS_IMAGE_RESULT}greyBothEyeXZ.png" target="_blank"><img src="{VSS_IMAGE_RESULT}greyBothEyeXZ.png" alt="results" width="450"/></a>
+   </td>
+  </tr>
+</table>
+</div>
+
+<div class="visiomess_section">
+<h4>side view</h4>
+<table>
+  <tr>
+   <td>Right Eye</td>
+   <td>Left Eye</td>
+  </tr>
+  <tr>
+   <td>
+     <a href="{VSS_IMAGE_RESULT}greyRightEyeXZ.png" target="_blank"><img src="{VSS_IMAGE_RESULT}greyRightEyeXZ.png" alt="results" width="220"/></a>
+   </td>
+   <td>
+     <a href="{VSS_IMAGE_RESULT}greyLeftEyeXZ.png" target="_blank"><img src="{VSS_IMAGE_RESULT}greyLeftEyeXZ.png" alt="results" width="220"/></a>
+   </td>
+  </tr>
+</table>
+</div>
+
+</div>
+</patTemplate:tmpl>

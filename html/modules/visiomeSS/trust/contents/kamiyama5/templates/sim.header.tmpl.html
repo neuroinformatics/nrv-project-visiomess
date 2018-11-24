@@ -1,0 +1,51 @@
+<patTemplate:tmpl name="header">
+<script type="text/javascript">
+<!--
+function visiomess_submit( act ) {
+  var prefix = 'visiomess_{VSS_COMMON_SUBDIR}_';
+  var el_form = document.getElementById( prefix + 'form' );
+  var el_action = document.getElementById( prefix + 'action' );
+  el_action.value = act;
+  el_form.submit();
+  return false;
+}
+-->
+</script>
+<!-- Header -->
+<h2 class="visiomess_title">Ionic Current Model of Fish Retinal Horizontal Cell</h2>
+<p>
+You can simulate the fish retinal horizontal cell model responses.
+Click "Run 1" for calculation and plot of grutamate applied response. "View1" for plot the results. 
+Click "Run 2" and "View2" for calculation and plot of ICa model responses.</p>
+
+<div class="visiomess_form">
+<form id="visiomess_{VSS_COMMON_SUBDIR}_form" method="post" action="?s={VSS_COMMON_SUBDIR}&amp;p={VSS_COMMON_PAGE}">
+  <input id="visiomess_{VSS_COMMON_SUBDIR}_action" type="hidden" name="a" value="default"/>
+  <input type="button" onclick="return visiomess_submit('run1');" value="Run 1"/>
+  &nbsp;
+  <input type="button" onclick="return visiomess_submit('view1');" value="View 1"/>
+  &nbsp;
+  <input type="button" onclick="return visiomess_submit('emodel1');" value="Edit fishHC.mdl"/>
+  &nbsp;
+  <input type="button" onclick="return visiomess_submit('esl1');" value="Edit Glu_resp.sl"/>
+  &nbsp;
+  <input type="button" onclick="return visiomess_submit('esl1c');" value="Edit Glu_resp_compute.sl"/>
+  &nbsp;
+  <input type="button" onclick="return visiomess_submit('reset1');" value="Reset 1"/>
+  <br />
+  <input type="button" onclick="return visiomess_submit('run2');" value="Run 2"/>
+  &nbsp;
+  <input type="button" onclick="return visiomess_submit('view2');" value="View 2"/>
+  &nbsp;
+  <input type="button" onclick="return visiomess_submit('emodel2');" value="Edit ICa.mdl"/>
+  &nbsp;
+  <input type="button" onclick="return visiomess_submit('esl2');" value="Edit ICa_double.sl"/>
+  &nbsp;
+  <input type="button" onclick="return visiomess_submit('esl2c');" value="Edit ICa_double_compute.sl"/>
+  &nbsp;
+  <input type="button" onclick="return visiomess_submit('reset2');" value="Reset 2"/>
+</form>
+</div>
+
+<hr />
+</patTemplate:tmpl>

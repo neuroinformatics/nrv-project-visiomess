@@ -1,0 +1,82 @@
+<patTemplate:tmpl name="header">
+<script type="text/javascript">
+<!--
+function visiomess_submit( act ) {
+  var prefix = 'visiomess_ichikawa_';
+  var el_form = document.getElementById( prefix + 'form' );
+  var el_action = document.getElementById( prefix + 'action' );
+  el_action.value = act;
+  el_form.submit();
+  return false;
+}
+-->
+</script>
+<!-- Header -->
+<h2 class="visiomess_title">AMPA receptor channel kinetics in cerebellar Purkinje cell</h2>
+<p>
+You can simulate the bipolar cell soma model responses. Click "run" for
+starting simulation, then "plot result" for plotting the result. You can
+edit parameters, stimulus and run conditions by clicking "edit symbols",
+"edit stimulus",  "edit run condition" and "reset".
+</p>
+
+<div class="visiomess_section">
+<ul>
+  <li>simulation condition file: sim.cond</li>
+  <li>original A-Cell file: Purkinje_AMPA_receptor.Csim</li>
+  <li>output file: simParam.dat</li>
+  <li>number of symbols: 24</li>
+</ul>
+</div>
+
+<div class="visiomess_form">
+<form id="visiomess_ichikawa_form" method="post" action="?s=ichikawa&amp;p=sim">
+  <input id="visiomess_ichikawa_action" type="hidden" name="a" value="default"/>
+  <input type="button" onclick="return visiomess_submit('run');" value="run"/>
+  &nbsp;
+  <input type="button" onclick="return visiomess_submit('esym');" value="edit symbols"/>
+  &nbsp;
+  <input type="button" onclick="return visiomess_submit('estim');" value="edit stimulus"/>
+  &nbsp;
+  <input type="button" onclick="return visiomess_submit('econd');" value="edit run condition"/>
+  &nbsp;
+  <input type="button" onclick="return visiomess_submit('reset');" value="reset"/>
+<p>
+select plot symbols (&le; 6)
+</p>
+<table>
+  <tr>
+    <td class="visiomess_nowrap"><input type="checkbox" name="plotVar1" value="1"/>A</td>
+    <td class="visiomess_nowrap"><input type="checkbox" name="plotVar2" value="1"/>A*</td>
+    <td class="visiomess_nowrap"><input type="checkbox" name="plotVar3" value="1"/>A.2glu</td>
+    <td class="visiomess_nowrap"><input type="checkbox" name="plotVar4" value="1"/>A.glu</td>
+    <td class="visiomess_nowrap"><input type="checkbox" name="plotVar5" value="1"/>Ad</td>
+    <td class="visiomess_nowrap"><input type="checkbox" name="plotVar6" value="1"/>Ad.2glu</td>
+  </tr><tr>
+    <td class="visiomess_nowrap"><input type="checkbox" name="plotVar7" value="1"/>Ad.glu</td>
+    <td class="visiomess_nowrap"><input type="checkbox" name="plotVar8" value="1"/>a</td>
+    <td class="visiomess_nowrap"><input type="checkbox" name="plotVar9" value="1"/>ad</td>
+    <td class="visiomess_nowrap"><input type="checkbox" name="plotVar10" value="1"/>b</td>
+    <td class="visiomess_nowrap"><input type="checkbox" name="plotVar11" value="1"/>bd</td>
+    <td class="visiomess_nowrap"><input type="checkbox" name="plotVar12" value="1"/>glu</td>
+  </tr><tr>
+    <td class="visiomess_nowrap"><input type="checkbox" name="plotVar13" value="1"/>kA-1</td>
+    <td class="visiomess_nowrap"><input type="checkbox" name="plotVar14" value="1"/>kA-2</td>
+    <td class="visiomess_nowrap"><input type="checkbox" name="plotVar15" value="1"/>kA-2d</td>
+    <td class="visiomess_nowrap"><input type="checkbox" name="plotVar16" value="1"/>kA1</td>
+    <td class="visiomess_nowrap"><input type="checkbox" name="plotVar17" value="1"/>kA2</td>
+    <td class="visiomess_nowrap"><input type="checkbox" name="plotVar18" value="1"/>kA2d</td>
+  </tr><tr>
+    <td class="visiomess_nowrap"><input type="checkbox" name="plotVar19" value="1"/>kdA-1</td>
+    <td class="visiomess_nowrap"><input type="checkbox" name="plotVar20" value="1"/>kdA-2</td>
+    <td class="visiomess_nowrap"><input type="checkbox" name="plotVar21" value="1"/>kdA-3</td>
+    <td class="visiomess_nowrap"><input type="checkbox" name="plotVar22" value="1"/>kdA1</td>
+    <td class="visiomess_nowrap"><input type="checkbox" name="plotVar23" value="1"/>kdA2</td>
+    <td class="visiomess_nowrap"><input type="checkbox" name="plotVar24" value="1"/>kdA3</td>
+  </tr>
+</table>
+</form>
+</div>
+
+<hr />
+</patTemplate:tmpl>

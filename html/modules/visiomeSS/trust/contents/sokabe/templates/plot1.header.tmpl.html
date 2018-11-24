@@ -1,0 +1,41 @@
+<patTemplate:tmpl name="header">
+<script type="text/javascript">
+<!--
+function visiomess_submit( act ) {
+  var prefix = 'visiomess_{VSS_COMMON_SUBDIR}_';
+  var el_form = document.getElementById( prefix + 'form' );
+  var el_action = document.getElementById( prefix + 'action' );
+  el_action.value = act;
+  el_form.submit();
+  return false;
+}
+-->
+</script>
+<!-- Header -->
+<h2 class="visiomess_title">Single channel current-voltage relationships</h2>
+<p>
+You can plot current-voltage relationships of the AC164 channel. Click "Plot
+Data", then "View Result" for plotting graph. "Edit Plot Parameters" button
+is for edit scales for X and Y axis. "Reset" button is for reset parameters
+to default values.
+</p>
+<ul>
+  <li>xmin: minimum value of X axis</li>
+  <li>xmax: maximum value of X axis</li>
+  <li>ymin: minimum value of Y axis</li>
+  <li>ymax: minimum value of Y axis</li>
+</ul>
+
+<div class="visiomess_form">
+<form id="visiomess_{VSS_COMMON_SUBDIR}_form" method="post" action="?s={VSS_COMMON_SUBDIR}&amp;p={VSS_COMMON_PAGE}">
+  <input id="visiomess_{VSS_COMMON_SUBDIR}_action" type="hidden" name="a" value="default"/>
+  <input type="button" onclick="return visiomess_submit('run');" value="Plot Data"/>
+  &nbsp;
+  <input type="button" onclick="return visiomess_submit('edit');" value="Edit Plot Parameters"/>
+  &nbsp;
+  <input type="button" onclick="return visiomess_submit('reset');" value="Reset"/>
+</form>
+</div>
+
+<hr />
+</patTemplate:tmpl>

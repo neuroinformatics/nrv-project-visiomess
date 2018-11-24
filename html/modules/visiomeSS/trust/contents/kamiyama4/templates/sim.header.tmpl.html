@@ -1,0 +1,32 @@
+<patTemplate:tmpl name="header">
+<script type="text/javascript">
+<!--
+function visiomess_submit( act ) {
+  var prefix = 'visiomess_{VSS_COMMON_SUBDIR}_';
+  var el_form = document.getElementById( prefix + 'form' );
+  var el_action = document.getElementById( prefix + 'action' );
+  el_action.value = act;
+  el_form.submit();
+  return false;
+}
+-->
+</script>
+<!-- Header -->
+<h2 class="visiomess_title">A Stochastic Model of Retinal Ganglion Cell</h2>
+<p>
+You can plot voltage clamp or current clamp simulation results. Click
+"Plot Voltage Clamp Result" or "Plot Current Clamp Result" button,
+then "View Result" button for plotting graph.
+</p>
+
+<div class="visiomess_form">
+<form id="visiomess_{VSS_COMMON_SUBDIR}_form" method="post" action="?s={VSS_COMMON_SUBDIR}&amp;p={VSS_COMMON_PAGE}">
+  <input id="visiomess_{VSS_COMMON_SUBDIR}_action" type="hidden" name="a" value="default"/>
+  <input type="button" onclick="return visiomess_submit('run1');" value="Plot Voltage Clamp Result"/>
+  &nbsp;
+  <input type="button" onclick="return visiomess_submit('run2');" value="Plot Current Clamp Result"/>
+</form>
+</div>
+
+<hr />
+</patTemplate:tmpl>

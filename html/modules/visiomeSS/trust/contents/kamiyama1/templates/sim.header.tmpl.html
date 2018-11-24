@@ -1,0 +1,40 @@
+<patTemplate:tmpl name="header">
+<script type="text/javascript">
+<!--
+function visiomess_submit( act ) {
+  var prefix = 'visiomess_{VSS_COMMON_SUBDIR}_';
+  var el_form = document.getElementById( prefix + 'form' );
+  var el_action = document.getElementById( prefix + 'action' );
+  el_action.value = act;
+  el_form.submit();
+  return false;
+}
+-->
+</script>
+<!-- Header -->
+<h2 class="visiomess_title">Ionic current model of the vertebrate rod photoreceptor</h2>
+<p>
+You can simulate the vertebrate rod photoreceptor responses. Click
+"Run Script" for starting simulation, then "View Result" for plotting the
+result. You can review the previous simulation results by clicking
+"View Results". "Edit MDL File" and "Edit SL File" buttons are for edit
+SATELLITE model descripttion file and script file.
+</p>
+
+<div class="visiomess_form">
+<form id="visiomess_{VSS_COMMON_SUBDIR}_form" method="post" action="?s={VSS_COMMON_SUBDIR}&amp;p={VSS_COMMON_PAGE}">
+  <input id="visiomess_{VSS_COMMON_SUBDIR}_action" type="hidden" name="a" value="default"/>
+  <input type="button" onclick="return visiomess_submit('run');" value="Run Script"/>
+  &nbsp;
+  <input type="button" onclick="return visiomess_submit('view');" value="View Results"/>
+  &nbsp;
+  <input type="button" onclick="return visiomess_submit('emodel');" value="Edit MDL File"/>
+  &nbsp;
+  <input type="button" onclick="return visiomess_submit('esl');" value="Edit SL File"/>
+  &nbsp;
+  <input type="button" onclick="return visiomess_submit('reset');" value="Reset"/>
+</form>
+</div>
+
+<hr />
+</patTemplate:tmpl>

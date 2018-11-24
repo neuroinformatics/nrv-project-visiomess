@@ -1,0 +1,85 @@
+Purkinje_AMPA_receptor.Csim
+simParam.dat
+ 24 
+A 1 molec.
+A* 0 molec.
+A.2glu 0 molec.
+A.glu 0 molec.
+Ad* 0 molec.
+Ad.2glu 0 molec.
+Ad.glu 0 molec.
+a 2.96e2 /s
+ad 2.96e2 /s
+b 4e3 /s
+bd 2e3 /s
+glu 0 M
+kA-1 6.65 /s
+kA-2 2.22e1 /s
+kA-2d 6.65e2 /s
+kA1 2.22e5 /M/s
+kA2 7.39e5 /M/s
+kA2d 2.22e7 /M/s
+kdA-1 4.4e-1 /s
+kdA-2 4.4e-1 /s
+kdA-3 1.32e1 /s
+kdA1 1.46 /s
+kdA2 1.46e1 /s
+kdA3 1.46e2 /s
+/*stimulation parameters*/
+ 3
+ 0
+ 0.001
+ 1.22265830336194E-03
+ 0
+ 1
+ 1
+ 0.0001
+ 0.002
+ 0
+ 0
+ 0
+ 1
+ 0
+ 1
+/*calculation condition*/
+ 0
+ 0.01
+ 0.000001
+ 0.000001
+/*number of output variables*/
+ 24 
+/*output symbols*/
+ 1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ 8 
+ 9 
+ 10 
+ 11 
+ 12 
+ 13 
+ 14 
+ 15 
+ 16 
+ 17 
+ 18 
+ 19 
+ 20 
+ 21 
+ 22 
+ 23 
+ 24 
+/*number of variables*/
+ 7 
+/*variable symbol number*/
+ 1 
+ 4 
+ 3 
+ 2 
+ 7 
+ 6 
+ 5 

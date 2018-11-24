@@ -1,0 +1,42 @@
+<patTemplate:tmpl name="header">
+<script type="text/javascript">
+<!--
+function visiomess_submit( act ) {
+  var prefix = 'visiomess_{VSS_COMMON_SUBDIR}_';
+  var el_form = document.getElementById( prefix + 'form' );
+  var el_action = document.getElementById( prefix + 'action' );
+  el_action.value = act;
+  el_form.submit();
+  return false;
+}
+-->
+</script>
+<!-- Header -->
+<h2 class="visiomess_title">Single channel current trace</h2>
+<p>
+You can plot single channel current traces under symmetric 500 mM KCl at
+different voltages. Click "Plot Data", then "View Result" for plotting 
+graph. "Edit Plot Parameters" button is for edit scales for time and
+current amplitude axis. "Reset" button is for reset parameters to default
+values.
+</p>
+<ul>
+  <li>xmin: minimum value of time axis</li>
+  <li>xmax: maximum value of time axis</li>
+  <li>ymin: minimum value of current amplitude axis</li>
+  <li>ymax: minimum value of current amplitude axis</li>
+</ul>
+
+<div class="visiomess_form">
+<form id="visiomess_{VSS_COMMON_SUBDIR}_form" method="post" action="?s={VSS_COMMON_SUBDIR}&amp;p={VSS_COMMON_PAGE}">
+  <input id="visiomess_{VSS_COMMON_SUBDIR}_action" type="hidden" name="a" value="default"/>
+  <input type="button" onclick="return visiomess_submit('run');" value="Plot Data"/>
+  &nbsp;
+  <input type="button" onclick="return visiomess_submit('edit');" value="Edit Plot Parameters"/>
+  &nbsp;
+  <input type="button" onclick="return visiomess_submit('reset');" value="Reset"/>
+</form>
+</div>
+
+<hr />
+</patTemplate:tmpl>

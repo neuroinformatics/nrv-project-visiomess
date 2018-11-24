@@ -1,0 +1,14 @@
+<patTemplate:tmpl name="main">
+<div class="visiomess_section">
+<h4>Reset {TITLE}</h4>
+<patTemplate:tmpl name="params" type="condition" conditionvar="DO_OUTPUT">
+  <patTemplate:sub condition="1">
+  <p>{NAME}</p>
+  {HTML}
+  </patTemplate:sub>
+  <patTemplate:sub condition="default">
+  <p>&raquo;&nbsp;{NAME}</p>
+  </patTemplate:sub>
+</patTemplate:tmpl>
+</div>
+</patTemplate:tmpl>

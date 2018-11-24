@@ -1,0 +1,35 @@
+<patTemplate:tmpl name="header">
+<script type="text/javascript">
+<!--
+function visiomess_submit( act ) {
+  var prefix = 'visiomess_{VSS_COMMON_SUBDIR}_';
+  var el_form = document.getElementById( prefix + 'form' );
+  var el_action = document.getElementById( prefix + 'action' );
+  el_action.value = act;
+  el_form.submit();
+  return false;
+}
+-->
+</script>
+<!-- Header -->
+<h2 class="visiomess_title">Recognition of Partly Occluded Patterns</h2>
+<div class="visiomess_section">
+<h3>How to run the program</h3>
+<p>
+To execute the program, click "Run Program", first. Then, to view simulation
+results, click "View Result" and select newest results.
+<!-- You can edit simulation control file in order to execute on the different conditions. -->
+</p>
+</div>
+
+<div class="visiomess_form">
+<form id="visiomess_{VSS_COMMON_SUBDIR}_form" method="post" action="?s={VSS_COMMON_SUBDIR}&amp;p={VSS_COMMON_PAGE}">
+  <input id="visiomess_{VSS_COMMON_SUBDIR}_action" type="hidden" name="a" value="default"/>
+  <input type="button" onclick="return visiomess_submit('run');" value="Run Program"/>
+  &nbsp;
+  <input type="button" onclick="return visiomess_submit('view');" value="View Results"/>
+</form>
+</div>
+
+<hr />
+</patTemplate:tmpl>
